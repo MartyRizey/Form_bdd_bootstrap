@@ -1,0 +1,277 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;    
+}
+
+.container {
+    /* border: red 2px solid; */
+    padding: 0.5em;
+}
+
+header {
+    background-color: #343A40;
+}
+
+header, 
+main {
+    /* border: red 1px dotted; */
+    padding: 0.5em;
+}
+
+header, 
+main {
+    margin-bottom: 0.5em;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+header .navbar a.nav-link:hover {
+    color: rgb(38, 59, 128);
+    text-shadow: 1px 1px 2px white;
+}
+
+header .navbar li.nav-item:hover {
+    background-color: rgb(233, 239, 247);    
+}
+
+.section_style p, 
+.div_style p {
+    margin-bottom: 0;      
+}
+
+main, 
+main nav .breadcrumb {
+    background-color: beige;
+}
+
+main form {   
+    padding: 0.5em;
+}
+
+/* Fil d'ariane ------------------------------------------------------- */
+main nav .breadcrumb {
+    font-size: 0.8em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}    
+
+main nav .breadcrumb a {
+    color: silver;
+}
+
+main .breadcrumb li.breadcrumb-item {
+    display: flex;
+}
+
+/* main Accueil ------------------------------------------------------ */
+main section {
+    text-align: justify;
+}
+
+main section.img_pyramide {
+    display: flex;    
+    margin-bottom: 0.5em;
+}
+
+main section.img_pyramide img {
+    margin-left: 0.5em;
+}
+
+/* main Adhérents MODAL ------------------------------------------------------------- */
+div.modal div.modal_item {
+    /* display: flex; */
+    line-height: 0.5em;
+    margin-bottom: 2em;
+}
+div.modal div.modal_item p.modal_item-data {
+    border: solid 1px rgba(241, 241, 241, 0.9);
+    background-color: rgba(241, 241, 241, 0.5);
+    border-radius: 5px;
+    padding: 0.5em 0 0.5em 0;
+    color: #666;
+    text-shadow: 2px 2px 2px white;
+}
+
+/* main Adhérents ------------------------------------------------------------------ */
+main section#adherentsList {
+     display: flex;  
+     flex-wrap: wrap;
+    /* border: 1px solid black; */
+    padding: 0.5em;
+}
+
+main section#adherentsList .btn-displayDataSubmit {
+    margin-bottom: 0.8em;    
+}
+
+main section#adherentsList .btn-displayDataSubmit:active,
+main section#adherentsList div#btn_cta .btn_cancel:active {
+    box-shadow: 2px 2px 8px black inset;
+    color: black ;
+}
+
+main section#adherentsList div#btn_cta button#btnGroupDrop1 {
+    margin: 0 0.2em 0 0.2em;    
+}
+
+/* Cacher le choix "Tri par défaut" du bouton 'Liste de tri' */
+main section#adherentsList div#btn_cta div.btn-group a.default_sort {
+    display: none;
+    /* visibility: hidden */
+}
+
+main section#adherentsList div#btn_cta div .dropdown-menu, 
+main section#adherentsList .btn-displayDataSubmit,
+main section#adherentsList div#btn_cta button#btnGroupDrop1,
+main section#adherentsList div#btn_cta .btn_cancel {
+    box-shadow: 2px 2px 2px black;
+}
+
+main section#adherentsList .btn-displayDataSubmit,
+main section#adherentsList div#btn_cta button#btnGroupDrop1 {    
+    outline: 0;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(0,105,217,0.5);
+    color: white;
+    text-shadow:1px 1px 1px black;
+}
+
+main section#adherentsList table#table_list {
+    flex-direction: column;
+    width: 100%;
+} 
+
+main section#adherentsList table#table_list th:first-child {
+    padding-right: 1em;
+}
+
+main section#adherentsList table#table_list tbody tr td:first-child {
+    color:silver;
+}
+
+main section#adherentsList table#table_list thead {
+    border-bottom: 1px solid rgb(228, 228, 163);
+    border-top: 1px solid rgb(228, 228, 163);
+}
+
+main section#adherentsList table#table_list tr {
+    line-height: 2em;    
+}
+
+main section#adherentsList table#table_list tr:nth-child(2n) {
+    background-color: rgba(228, 228, 163, 0.5);
+    color: #666;    
+}
+
+
+/* Footer ------------------------------------------------------------ */
+footer section {
+    display: flex;
+    justify-content: space-around;
+    color: silver;
+    border: 1px silver solid;
+    padding: 1em;
+}
+
+/* Responsive - Média Queries -------------------------------------- */
+@media(max-width: 1199px){
+
+    main section.img_pyramide {
+        flex-wrap: wrap;        
+    }
+
+    main section.img_pyramide img {
+        margin-left: 0;   
+        margin-top: 0.5em;   
+        align-self: center; 
+    }
+}
+
+@media(max-width: 991px) {
+
+    header nav.navbar {
+        justify-content: center;
+    }
+
+    header nav form {
+        margin-top: 0.5em;
+    }
+
+    main section#adherentsList table#table_list th.hidden,
+    main section#adherentsList table#table_list td.hidden {
+        /* permet de cacher les champs. On peut aussi utiliser "visibility: hidden" 
+           Attention le résultat n'est pas le même. */
+        display: none;
+    }
+
+    footer section {
+        color: rgb(2, 82, 134);
+        display: block;
+        text-align: center;
+    }
+}
+
+@media(max-width: 767px){
+
+    header nav .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav form button {
+        margin: auto 0.2em;
+    }
+
+    main form .btn_submit {
+        margin-bottom: 0.2em;
+    }  
+
+    /* Apparition d'un tri par défaut dans la liste de tri du bouton 'Liste de tri' */
+    main section#adherentsList div#btn_cta div.btn-group a.default_sort {
+        /* visibility: visible; */
+        display: block;
+    }
+
+    /* Cacher le bouton "Annuler le tri" */
+    main section#adherentsList div#btn_cta .btn_cancel {
+        display: none;
+    }    
+}
+
+@media(max-width: 514px){
+
+    main section#adherentsList div#btn_cta button#btnGroupDrop1 {
+        margin-left: 0;
+        margin-bottom: 0.5em;        
+    }
+
+}
+
+@media(max-width: 575px) {
+
+    header nav form button {
+        margin: auto;
+        margin-top: 0.2em;
+    }   
+}
+
+
+/* place un caractère devant le fil d'Ariane
+.breadcrumb::before {
+    content: " > ";
+    color: rgb(17, 0, 255);
+}
+*/
+
+
